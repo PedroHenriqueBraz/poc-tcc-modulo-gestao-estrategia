@@ -14,14 +14,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "pagamento_fornecedores",
     "folha_pagamento"
 })
-@Generated("jsonschema2pojo")
 public class BalancoMensal implements Serializable
 {
 
     @JsonProperty("recebimento_clientes")
     private List<RecebimentoCliente> recebimentoClientes = null;
     @JsonProperty("pagamento_fornecedores")
-    private List<PagamentoFornecedore> pagamentoFornecedores = null;
+    private List<PagamentoFornecedor> pagamentoFornecedors = null;
     @JsonProperty("folha_pagamento")
     private FolhaPagamento folhaPagamento;
     private final static long serialVersionUID = -4513043616467223484L;
@@ -37,13 +36,13 @@ public class BalancoMensal implements Serializable
     }
 
     @JsonProperty("pagamento_fornecedores")
-    public List<PagamentoFornecedore> getPagamentoFornecedores() {
-        return pagamentoFornecedores;
+    public List<PagamentoFornecedor> getPagamentoFornecedores() {
+        return pagamentoFornecedors;
     }
 
     @JsonProperty("pagamento_fornecedores")
-    public void setPagamentoFornecedores(List<PagamentoFornecedore> pagamentoFornecedores) {
-        this.pagamentoFornecedores = pagamentoFornecedores;
+    public void setPagamentoFornecedores(List<PagamentoFornecedor> pagamentoFornecedors) {
+        this.pagamentoFornecedors = pagamentoFornecedors;
     }
 
     @JsonProperty("folha_pagamento")
@@ -60,7 +59,7 @@ public class BalancoMensal implements Serializable
     public int hashCode() {
         int result = 1;
         result = ((result* 31)+((this.folhaPagamento == null)? 0 :this.folhaPagamento.hashCode()));
-        result = ((result* 31)+((this.pagamentoFornecedores == null)? 0 :this.pagamentoFornecedores.hashCode()));
+        result = ((result* 31)+((this.pagamentoFornecedors == null)? 0 :this.pagamentoFornecedors.hashCode()));
         result = ((result* 31)+((this.recebimentoClientes == null)? 0 :this.recebimentoClientes.hashCode()));
         return result;
     }
@@ -74,7 +73,7 @@ public class BalancoMensal implements Serializable
             return false;
         }
         BalancoMensal rhs = ((BalancoMensal) other);
-        return ((((this.folhaPagamento == rhs.folhaPagamento)||((this.folhaPagamento!= null)&&this.folhaPagamento.equals(rhs.folhaPagamento)))&&((this.pagamentoFornecedores == rhs.pagamentoFornecedores)||((this.pagamentoFornecedores!= null)&&this.pagamentoFornecedores.equals(rhs.pagamentoFornecedores))))&&((this.recebimentoClientes == rhs.recebimentoClientes)||((this.recebimentoClientes!= null)&&this.recebimentoClientes.equals(rhs.recebimentoClientes))));
+        return ((((this.folhaPagamento == rhs.folhaPagamento)||((this.folhaPagamento!= null)&&this.folhaPagamento.equals(rhs.folhaPagamento)))&&((this.pagamentoFornecedors == rhs.pagamentoFornecedors)||((this.pagamentoFornecedors != null)&&this.pagamentoFornecedors.equals(rhs.pagamentoFornecedors))))&&((this.recebimentoClientes == rhs.recebimentoClientes)||((this.recebimentoClientes!= null)&&this.recebimentoClientes.equals(rhs.recebimentoClientes))));
     }
 
 }

@@ -11,6 +11,8 @@ public class RelatorioFinanceiroServiceImpl implements RelatorioFinanceiroServic
     private SAFClient safClient;
 
     public RelatorioFinanceiro gerarRelatorio(int mes){
+        var balanco = safClient.obterBalancoMensal(mes);
+        var folha =  balanco.getFolhaPagamento();
         return new RelatorioFinanceiro();
     }
 }

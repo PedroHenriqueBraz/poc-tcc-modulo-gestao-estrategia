@@ -2,7 +2,13 @@
 package com.gsl.gestaoestrategia.client.response;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import javax.annotation.Generated;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -12,33 +18,33 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "valor",
     "data"
 })
-@Generated("jsonschema2pojo")
 public class FolhaPagamento implements Serializable
 {
 
     @JsonProperty("valor")
-    private Double valor;
+    private BigDecimal valor;
     @JsonProperty("data")
-    private String data;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate data;
     private final static long serialVersionUID = -369011451907654065L;
 
     @JsonProperty("valor")
-    public Double getValor() {
+    public BigDecimal getValor() {
         return valor;
     }
 
     @JsonProperty("valor")
-    public void setValor(Double valor) {
+    public void setValor(BigDecimal valor) {
         this.valor = valor;
     }
 
     @JsonProperty("data")
-    public String getData() {
+    public LocalDate getData() {
         return data;
     }
 
     @JsonProperty("data")
-    public void setData(String data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 

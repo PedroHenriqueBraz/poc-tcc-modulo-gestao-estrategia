@@ -2,7 +2,12 @@
 package com.gsl.gestaoestrategia.client.response;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import javax.annotation.Generated;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -13,35 +18,35 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "data",
     "fornecedor_id"
 })
-@Generated("jsonschema2pojo")
-public class PagamentoFornecedore implements Serializable
+public class PagamentoFornecedor implements Serializable
 {
 
     @JsonProperty("valor")
-    private Double valor;
+    private BigDecimal valor;
     @JsonProperty("data")
-    private String data;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate data;
     @JsonProperty("fornecedor_id")
     private Integer fornecedorId;
     private final static long serialVersionUID = 7091301350103199510L;
 
     @JsonProperty("valor")
-    public Double getValor() {
+    public BigDecimal getValor() {
         return valor;
     }
 
     @JsonProperty("valor")
-    public void setValor(Double valor) {
+    public void setValor(BigDecimal valor) {
         this.valor = valor;
     }
 
     @JsonProperty("data")
-    public String getData() {
+    public LocalDate getData() {
         return data;
     }
 
     @JsonProperty("data")
-    public void setData(String data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
@@ -69,10 +74,10 @@ public class PagamentoFornecedore implements Serializable
         if (other == this) {
             return true;
         }
-        if ((other instanceof PagamentoFornecedore) == false) {
+        if ((other instanceof PagamentoFornecedor) == false) {
             return false;
         }
-        PagamentoFornecedore rhs = ((PagamentoFornecedore) other);
+        PagamentoFornecedor rhs = ((PagamentoFornecedor) other);
         return ((((this.valor == rhs.valor)||((this.valor!= null)&&this.valor.equals(rhs.valor)))&&((this.fornecedorId == rhs.fornecedorId)||((this.fornecedorId!= null)&&this.fornecedorId.equals(rhs.fornecedorId))))&&((this.data == rhs.data)||((this.data!= null)&&this.data.equals(rhs.data))));
     }
 

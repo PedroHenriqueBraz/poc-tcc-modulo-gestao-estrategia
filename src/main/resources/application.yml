@@ -1,0 +1,6 @@
+server:
+  port: 8091
+
+servicos:
+  saf:
+    url: https://4b1b22ba-2a52-4933-b635-645a77d0d9d7.mock.pstmn.io/saf

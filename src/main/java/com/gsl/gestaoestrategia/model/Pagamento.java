@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,28 +15,28 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "nome_cliente",
+    "nome_fornecedor",
     "valor"
 })
-public class RecebimentoCliente implements Serializable
+public class Pagamento implements Serializable
 {
 
-    @JsonProperty("nome_cliente")
-    private String nomeCliente;
+    @JsonProperty("nome_fornecedor")
+    private String nomeFornecedor;
     @JsonProperty("valor")
     private BigDecimal valor;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 4365669904348786761L;
+    private final static long serialVersionUID = -3160313774171399772L;
 
-    @JsonProperty("nome_cliente")
-    public String getNomeCliente() {
-        return nomeCliente;
+    @JsonProperty("nome_fornecedor")
+    public String getNomeFornecedor() {
+        return nomeFornecedor;
     }
 
-    @JsonProperty("nome_cliente")
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
+    @JsonProperty("nome_fornecedor")
+    public void setNomeFornecedor(String nomeFornecedor) {
+        this.nomeFornecedor = nomeFornecedor;
     }
 
     @JsonProperty("valor")
@@ -63,8 +63,8 @@ public class RecebimentoCliente implements Serializable
     public int hashCode() {
         int result = 1;
         result = ((result* 31)+((this.valor == null)? 0 :this.valor.hashCode()));
-        result = ((result* 31)+((this.nomeCliente == null)? 0 :this.nomeCliente.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
+        result = ((result* 31)+((this.nomeFornecedor == null)? 0 :this.nomeFornecedor.hashCode()));
         return result;
     }
 
@@ -73,11 +73,11 @@ public class RecebimentoCliente implements Serializable
         if (other == this) {
             return true;
         }
-        if ((other instanceof RecebimentoCliente) == false) {
+        if ((other instanceof Pagamento) == false) {
             return false;
         }
-        RecebimentoCliente rhs = ((RecebimentoCliente) other);
-        return ((((this.valor == rhs.valor)||((this.valor!= null)&&this.valor.equals(rhs.valor)))&&((this.nomeCliente == rhs.nomeCliente)||((this.nomeCliente!= null)&&this.nomeCliente.equals(rhs.nomeCliente))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))));
+        Pagamento rhs = ((Pagamento) other);
+        return ((((this.valor == rhs.valor)||((this.valor!= null)&&this.valor.equals(rhs.valor)))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.nomeFornecedor == rhs.nomeFornecedor)||((this.nomeFornecedor!= null)&&this.nomeFornecedor.equals(rhs.nomeFornecedor))));
     }
 
 }

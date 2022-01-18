@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Generated;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -30,9 +30,9 @@ public class RelatorioFinanceiro implements Serializable
     @JsonProperty("receita_liquida")
     private BigDecimal receitaLiquida;
     @JsonProperty("recebimento_clientes")
-    private List<RecebimentoCliente> recebimentoClientes = null;
+    private List<Recebimento> recebimentos = null;
     @JsonProperty("pagamento_fornecedores")
-    private List<PagamentoFornecedor> pagamentoFornecedores = null;
+    private List<Pagamento> pagamentos = null;
     @JsonProperty("folha_pagamento_colaboradores")
     private BigDecimal folhaPagamentoColaboradores;
     @JsonIgnore
@@ -60,23 +60,23 @@ public class RelatorioFinanceiro implements Serializable
     }
 
     @JsonProperty("recebimento_clientes")
-    public List<RecebimentoCliente> getRecebimentoClientes() {
-        return recebimentoClientes;
+    public List<Recebimento> getRecebimentoClientes() {
+        return recebimentos;
     }
 
     @JsonProperty("recebimento_clientes")
-    public void setRecebimentoClientes(List<RecebimentoCliente> recebimentoClientes) {
-        this.recebimentoClientes = recebimentoClientes;
+    public void setRecebimentoClientes(List<Recebimento> recebimentos) {
+        this.recebimentos = recebimentos;
     }
 
     @JsonProperty("pagamento_fornecedores")
-    public List<PagamentoFornecedor> getPagamentoFornecedores() {
-        return pagamentoFornecedores;
+    public List<Pagamento> getPagamentos() {
+        return pagamentos;
     }
 
     @JsonProperty("pagamento_fornecedores")
-    public void setPagamentoFornecedores(List<PagamentoFornecedor> pagamentoFornecedores) {
-        this.pagamentoFornecedores = pagamentoFornecedores;
+    public void setPagamentos(List<Pagamento> pagamentos) {
+        this.pagamentos = pagamentos;
     }
 
     @JsonProperty("folha_pagamento_colaboradores")
@@ -103,8 +103,8 @@ public class RelatorioFinanceiro implements Serializable
     public int hashCode() {
         int result = 1;
         result = ((result* 31)+((this.folhaPagamentoColaboradores == null)? 0 :this.folhaPagamentoColaboradores.hashCode()));
-        result = ((result* 31)+((this.pagamentoFornecedores == null)? 0 :this.pagamentoFornecedores.hashCode()));
-        result = ((result* 31)+((this.recebimentoClientes == null)? 0 :this.recebimentoClientes.hashCode()));
+        result = ((result* 31)+((this.pagamentos == null)? 0 :this.pagamentos.hashCode()));
+        result = ((result* 31)+((this.recebimentos == null)? 0 :this.recebimentos.hashCode()));
         result = ((result* 31)+((this.receitaLiquida == null)? 0 :this.receitaLiquida.hashCode()));
         result = ((result* 31)+((this.receitaBruta == null)? 0 :this.receitaBruta.hashCode()));
         result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
@@ -120,7 +120,7 @@ public class RelatorioFinanceiro implements Serializable
             return false;
         }
         RelatorioFinanceiro rhs = ((RelatorioFinanceiro) other);
-        return (((((((this.folhaPagamentoColaboradores == rhs.folhaPagamentoColaboradores)||((this.folhaPagamentoColaboradores!= null)&&this.folhaPagamentoColaboradores.equals(rhs.folhaPagamentoColaboradores)))&&((this.pagamentoFornecedores == rhs.pagamentoFornecedores)||((this.pagamentoFornecedores!= null)&&this.pagamentoFornecedores.equals(rhs.pagamentoFornecedores))))&&((this.recebimentoClientes == rhs.recebimentoClientes)||((this.recebimentoClientes!= null)&&this.recebimentoClientes.equals(rhs.recebimentoClientes))))&&((this.receitaLiquida == rhs.receitaLiquida)||((this.receitaLiquida!= null)&&this.receitaLiquida.equals(rhs.receitaLiquida))))&&((this.receitaBruta == rhs.receitaBruta)||((this.receitaBruta!= null)&&this.receitaBruta.equals(rhs.receitaBruta))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))));
+        return (((((((this.folhaPagamentoColaboradores == rhs.folhaPagamentoColaboradores)||((this.folhaPagamentoColaboradores!= null)&&this.folhaPagamentoColaboradores.equals(rhs.folhaPagamentoColaboradores)))&&((this.pagamentos == rhs.pagamentos)||((this.pagamentos!= null)&&this.pagamentos.equals(rhs.pagamentos))))&&((this.recebimentos == rhs.recebimentos)||((this.recebimentos != null)&&this.recebimentos.equals(rhs.recebimentos))))&&((this.receitaLiquida == rhs.receitaLiquida)||((this.receitaLiquida!= null)&&this.receitaLiquida.equals(rhs.receitaLiquida))))&&((this.receitaBruta == rhs.receitaBruta)||((this.receitaBruta!= null)&&this.receitaBruta.equals(rhs.receitaBruta))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))));
     }
 
 }

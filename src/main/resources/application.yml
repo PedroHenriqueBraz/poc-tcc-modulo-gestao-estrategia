@@ -22,3 +22,5 @@ spring:
 servicos:
   mic:
     url: http://localhost:8092
+  msc:
+    url: http://localhost:8093

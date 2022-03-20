@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -15,5 +16,7 @@ public class FluxoEntrega {
     private Integer clienteId;
     private Integer mercadoriaId;
     private BigDecimal valorFrete;
+    private LocalDate dataPrevisao;
+    private LocalDate dataEntrega;
     private List<Etapa> etapas;
 }

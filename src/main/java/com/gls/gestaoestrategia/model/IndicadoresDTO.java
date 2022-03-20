@@ -13,4 +13,5 @@ import java.util.Map;
 public class IndicadoresDTO {
     private Map.Entry<Integer, Double> clienteRentavel;
     private BigDecimal percentualCancelamento;
+    private BigDecimal percentualAtrasos;
 }

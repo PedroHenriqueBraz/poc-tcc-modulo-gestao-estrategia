@@ -1,2 +1,8 @@
 server:
   port: 8080
+
+servicos:
+  mic:
+    url: http://poc-tcc-load-balancer-1045851266.us-east-1.elb.amazonaws.com
+  msc:
+    url: http://servicos-cliente-load-balancer-1756569371.us-east-1.elb.amazonaws.com

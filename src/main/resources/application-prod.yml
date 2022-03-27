@@ -3,6 +3,6 @@ server:
 
 servicos:
   mic:
-    url: http://poc-tcc-load-balancer-1045851266.us-east-1.elb.amazonaws.com
+    url: https://informacoes-cadastrais.herokuapp.com
   msc:
-    url: http://servicos-cliente-load-balancer-1756569371.us-east-1.elb.amazonaws.com
+    url: https://servicos-ao-cliente.herokuapp.com

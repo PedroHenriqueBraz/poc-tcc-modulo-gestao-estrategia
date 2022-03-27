@@ -1,1 +1,0 @@
-# poc-tcc-modulo-gestao-estrategia

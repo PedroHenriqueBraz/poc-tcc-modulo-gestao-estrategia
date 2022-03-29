@@ -24,3 +24,9 @@ servicos:
     url: http://localhost:8092
   msc:
     url: http://localhost:8093
+
+# Show details of health endpoint
+management:
+  endpoint:
+    health:
+      show-details: always

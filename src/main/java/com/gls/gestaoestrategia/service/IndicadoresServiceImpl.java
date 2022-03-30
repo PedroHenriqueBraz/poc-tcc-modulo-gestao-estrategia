@@ -24,7 +24,10 @@ public class IndicadoresServiceImpl implements IndicadoresService{
     @Override
     public IndicadoresDTO obterIndicadores() {
         var entregas = mscClient.obterEntregas();
-
+        if (entregas.size() == 0){
+            var indicadoresZerado = new IndicadoresDTO();
+            return indicadoresZerado;
+        }
         var indicadores = new IndicadoresDTO();
         indicadores.setPercentualCancelamento(obterPercentualCancelados(entregas));
         indicadores.setClienteRentavel(obterClienteMaisRentavel(entregas));

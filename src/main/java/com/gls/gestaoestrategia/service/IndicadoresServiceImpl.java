@@ -3,6 +3,7 @@ package com.gls.gestaoestrategia.service;
 import com.gls.gestaoestrategia.httpclient.msc.MSCClient;
 import com.gls.gestaoestrategia.httpclient.msc.model.FluxoEntrega;
 import com.gls.gestaoestrategia.model.IndicadoresDTO;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -33,6 +34,11 @@ public class IndicadoresServiceImpl implements IndicadoresService{
         indicadores.setClienteRentavel(obterClienteMaisRentavel(entregas));
         indicadores.setPercentualAtrasos(calculaNumeroAtrasos(entregas));
         return indicadores;
+    }
+
+    @Override
+    @CacheEvict("entregas")
+    public void cacheEvict() {
     }
 
     private BigDecimal obterPercentualCancelados(List<FluxoEntrega> entregas){

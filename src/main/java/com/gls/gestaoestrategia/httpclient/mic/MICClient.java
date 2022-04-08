@@ -2,6 +2,7 @@ package com.gls.gestaoestrategia.httpclient.mic;
 
 import com.gls.gestaoestrategia.httpclient.mic.model.Cliente;
 import com.gls.gestaoestrategia.httpclient.mic.model.Fornecedor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +19,10 @@ public interface MICClient {
     List<Fornecedor> obterFornecedores();
 
     @RequestMapping(method = RequestMethod.GET,  value = "/cliente/{id}")
+    @Cacheable("clientes")
     Cliente obterClientePorId(@PathVariable("id") int id);
 
     @RequestMapping(method = RequestMethod.GET,  value = "/fornecedor/{id}")
+    @Cacheable("fornecedores")
     Fornecedor obterFornecedorPorId(@PathVariable("id") int id);
 }

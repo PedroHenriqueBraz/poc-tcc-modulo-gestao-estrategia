@@ -15,7 +15,7 @@ public class HealthWorker {
     @Autowired
     private MSCClient mscClient;
 
-    @Scheduled(fixedRate = 300000)
+    @Scheduled(fixedRate = 100000)
     public void healthCheck(){
         System.out.println("mic ping");
         micClient.health();

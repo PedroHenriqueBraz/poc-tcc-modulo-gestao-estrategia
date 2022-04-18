@@ -21,4 +21,7 @@ public interface MSCClient {
     default List<FluxoEntrega>fallback(Throwable throwable) {
         return new ArrayList<FluxoEntrega>();
     }
+
+    @RequestMapping(method = RequestMethod.GET,  value = "/actuator/health")
+    void health();
 }

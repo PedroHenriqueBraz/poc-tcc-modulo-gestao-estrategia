@@ -25,4 +25,7 @@ public interface MICClient {
     @RequestMapping(method = RequestMethod.GET,  value = "/fornecedor/{id}")
     @Cacheable("fornecedores")
     Fornecedor obterFornecedorPorId(@PathVariable("id") int id);
+
+    @RequestMapping(method = RequestMethod.GET,  value = "/actuator/health")
+    void health();
 }
